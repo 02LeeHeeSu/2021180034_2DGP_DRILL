@@ -55,3 +55,8 @@ def move_circle():
         angle += 1
         delay(0.001)
 
+while True:
+    move_square()
+    move_circle()
+    
+close_canvas()
