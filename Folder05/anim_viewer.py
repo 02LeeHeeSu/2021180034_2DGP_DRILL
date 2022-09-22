@@ -15,6 +15,7 @@ def face_frame():
             character.clip_draw(frame_x * 58, frame_y * 62, 58, 62, 400, 300)
             update_canvas()
             delay(1)
+            get_events()
             frame_x += 1
 
         frame_y -= 1
