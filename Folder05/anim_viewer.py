@@ -65,14 +65,19 @@ def right_frame():
         get_events()
 
 
-#face_frame()
+face_frame()
 
-#front_frame()
 
-#left_frame()
+front_frame()
 
-#back_frame()
+
+left_frame()
+
+
+back_frame()
+
 
 right_frame()
+
 
 close_canvas()
