@@ -55,7 +55,14 @@ def back_frame():
 
 
 def right_frame():
-    print('Right')
+    frame = 0
+    for x in range(50, 750 + 1, 5):
+        clear_canvas()
+        character.clip_draw(frame * 58, 0 * 62, 58, 62, x, 300)
+        update_canvas()
+        frame = (frame + 1) % 10
+        delay(0.05)
+        get_events()
 
 
 #face_frame()
@@ -64,8 +71,8 @@ def right_frame():
 
 #left_frame()
 
-back_frame()
+#back_frame()
 
-#right_frame()
+right_frame()
 
 close_canvas()
