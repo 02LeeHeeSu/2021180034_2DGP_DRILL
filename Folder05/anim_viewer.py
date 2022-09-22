@@ -22,7 +22,14 @@ def face_frame():
 
 
 def front_frame():
-    print('Front')
+    frame = 0
+    for y in range(550, 50 - 1, -5):
+        clear_canvas()
+        character.clip_draw(frame * 58, 3 * 62, 58, 62, 400, y)
+        update_canvas()
+        frame = (frame + 1) % 10
+        delay(0.05)
+        get_events()
 
 
 def left_frame():
@@ -37,9 +44,9 @@ def right_frame():
     print('Right')
 
 
-face_frame()
+#face_frame()
 
-#front_frame()
+front_frame()
 
 #left_frame()
 
