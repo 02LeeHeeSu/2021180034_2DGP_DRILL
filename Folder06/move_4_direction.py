@@ -5,7 +5,20 @@ dir_x, dir_y = 0, 0
 
 
 def handle_events():
-    print('called func handle_events')
+    global running
+    global dir_x, dir_y
+
+    events = get_events()
+    for event in events:
+        if event.type == SDL_QUIT:
+            running = False
 
 
-handle_events()
+open_canvas(TUK_WIDTH, TUK_HEIGHT)
+
+while running:
+    clear_canvas()
+    handle_events()
+
+close_canvas()
+
