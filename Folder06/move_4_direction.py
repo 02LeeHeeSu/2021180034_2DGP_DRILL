@@ -2,7 +2,8 @@ from pico2d import *
 TUK_WIDTH, TUK_HEIGHT = 1280, 1024
 running = True
 dir_x, dir_y = 0, 0
-
+x, y = TUK_WIDTH // 2, TUK_HEIGHT // 2
+frame = 0
 
 def handle_events():
     global running
