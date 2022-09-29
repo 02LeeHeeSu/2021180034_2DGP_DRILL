@@ -26,7 +26,10 @@ character = load_image('animation_sheet.png')
 
 while running:
     clear_canvas()
-    handle_events()
+    tuk_ground.draw(TUK_WIDTH // 2, TUK_HEIGHT // 2)
+    character.clip_draw(frame * 100, 100 * 1, 100, 100, x, y)
+    update_canvas()
+    frame = (frame + 1) % 8
 
 close_canvas()
 
