@@ -20,6 +20,9 @@ def handle_events():
 
 
 open_canvas(TUK_WIDTH, TUK_HEIGHT)
+tuk_ground = load_image('TUK_GROUND.png')
+character = load_image('animation_sheet.png')
+
 
 while running:
     clear_canvas()
