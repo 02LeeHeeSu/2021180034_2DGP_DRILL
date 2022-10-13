@@ -1,5 +1,7 @@
 from pico2d import *
 
+import random
+
 import game_framework
 import title_state
 import add_delete_state
@@ -15,7 +17,7 @@ class Grass:
 
 class Boy:
     def __init__(self):
-        self.x, self.y = 0, 90
+        self.x, self.y = random.randint(0, 800), 90
         self.dir = 1
         self.frame = 0
         self.image = load_image('animation_sheet.png')
@@ -58,6 +60,7 @@ grass = None
 def enter():
     global boy, grass
     boy = Boy()
+
     grass = Grass()
 
 
