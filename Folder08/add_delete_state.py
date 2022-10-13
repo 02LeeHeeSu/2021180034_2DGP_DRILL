@@ -38,3 +38,7 @@ def handle_events():
             match event.key:
                 case pico2d.SDLK_ESCAPE:
                     game_framework.pop_state()
+                case pico2d.SDLK_a:
+                    pass
+                case pico2d.SDLK_d:
+                    pass
