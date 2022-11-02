@@ -147,22 +147,6 @@ class Boy:
             key_event = key_event_table[(event.type, event.key)]
             self.add_event(key_event)
 
-        # if event.type == SDL_KEYDOWN:
-        #     match event.key:
-        #         case pico2d.SDLK_LEFT:
-        #             self.dir -= 1
-        #         case pico2d.SDLK_RIGHT:
-        #             self.dir += 1
-        #
-        # elif event.type == SDL_KEYUP:
-        #     match event.key:
-        #         case pico2d.SDLK_LEFT:
-        #             self.dir += 1
-        #             self.face_dir = -1
-        #         case pico2d.SDLK_RIGHT:
-        #             self.dir -= 1
-        #             self.face_dir = 1
-
     def __init__(self):
         self.x, self.y = 0, 90
         self.frame = 0
@@ -181,18 +165,6 @@ class Boy:
             self.cur_state.exit(self)
             self.cur_state = next_state[self.cur_state][event]
             self.cur_state.enter(self, event)
-        # self.frame = (self.frame + 1) % 8
-        # self.x += self.dir * 1
-        # self.x = clamp(0, self.x, 800)
 
     def draw(self):
         self.cur_state.draw(self)
-        # if self.dir == -1:
-        #     self.image.clip_draw(self.frame*100, 0, 100, 100, self.x, self.y)
-        # elif self.dir == 1:
-        #     self.image.clip_draw(self.frame*100, 100, 100, 100, self.x, self.y)
-        # else:
-        #     if self.face_dir == 1:
-        #         self.image.clip_draw(self.frame * 100, 300, 100, 100, self.x, self.y)
-        #     else:
-        #         self.image.clip_draw(self.frame * 100, 200, 100, 100, self.x, self.y)
