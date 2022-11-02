@@ -119,6 +119,10 @@ class AUTO_RUN:
         self.frame = (self.frame + 1) % 8
         self.x += self.dir
         self.x = clamp(0, self.x, 800)
+        if self.x == 800:
+            self.dir = -1
+        elif self.x == 0:
+            self.dir = 1
 
     @staticmethod
     def draw(self):
