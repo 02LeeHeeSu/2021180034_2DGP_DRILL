@@ -100,6 +100,34 @@ class SLEEP:
                                            self.x - 25, self.y - 25, 100, 100)
 
 
+class AUTO:
+    @staticmethod
+    def enter(self, event):
+        if self.face_dir == 1:
+            self.dir += 1
+        elif self.face_dir == -1:
+            self.dir -= 1
+
+
+    @staticmethod
+    def exit(self):
+        # run을 나가서 idle 상태로 갈 때, run의 방향을 알려줄 필요가 있다.
+        self.face_dir = self.dir
+
+    @staticmethod
+    def do(self):
+        self.frame = (self.frame + 1) % 8
+        self.x += self.dir
+        self.x = clamp(0, self.x, 800)
+
+    @staticmethod
+    def draw(self):
+        if self.dir == -1:
+            self.image.clip_draw(self.frame * 100, 0, 100, 100, self.x, self.y)
+        elif self.dir == 1:
+            self.image.clip_draw(self.frame * 100, 100, 100, 100, self.x, self.y)
+
+
 next_state = {
     IDLE: {RU: RUN, LU: RUN, RD: RUN, LD: RUN, TIMER: SLEEP},
     RUN: {RU: IDLE, LU: IDLE, RD: IDLE, LD: IDLE},
