@@ -100,7 +100,7 @@ class SLEEP:
                                            self.x - 25, self.y - 25, 100, 100)
 
 
-class AUTO:
+class AUTO_RUN:
     @staticmethod
     def enter(self, event):
         if self.face_dir == 1:
