@@ -1,7 +1,7 @@
 from pico2d import *
 
 # 이벤트 정의
-RD, LD, RU, LU, TIMER = range(5)
+RD, LD, RU, LU, TIMER, AD = range(6)
 
 key_event_table = {
     (SDL_KEYDOWN, SDLK_RIGHT): RD,
