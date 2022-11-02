@@ -111,7 +111,7 @@ class AUTO_RUN:
 
     @staticmethod
     def exit(self):
-        # run을 나가서 idle 상태로 갈 때, run의 방향을 알려줄 필요가 있다.
+        # auto_run을 나가서 idle, run 상태로 갈 때, run의 방향을 알려줄 필요가 있다.
         self.face_dir = self.dir
 
     @staticmethod
