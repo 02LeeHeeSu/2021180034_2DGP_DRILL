@@ -129,9 +129,10 @@ class AUTO:
 
 
 next_state = {
-    IDLE: {RU: RUN, LU: RUN, RD: RUN, LD: RUN, TIMER: SLEEP},
-    RUN: {RU: IDLE, LU: IDLE, RD: IDLE, LD: IDLE},
-    SLEEP: {RU: RUN, LU: RUN, RD: RUN, LD: RUN}
+    IDLE: {RU: RUN, LU: RUN, RD: RUN, LD: RUN, TIMER: SLEEP, AD: AUTO},
+    RUN: {RU: IDLE, LU: IDLE, RD: IDLE, LD: IDLE, AD: AUTO},
+    SLEEP: {RU: RUN, LU: RUN, RD: RUN, LD: RUN},
+    AUTO: {RU: RUN, LU: RUN, RD: RUN, LD: RUN, AD: IDLE}
 }
 
 
