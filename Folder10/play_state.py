@@ -8,6 +8,7 @@ from boy import Boy
 
 boy = None
 grass_background = None
+grass_foreground = None
 
 
 def handle_events():
