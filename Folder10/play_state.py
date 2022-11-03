@@ -27,8 +27,11 @@ def enter():
     global boy, grass_background
     boy = Boy()
     grass_background = Grass()
-    game_world.add_object(boy, 1)
+    grass_foreground = Grass(1)
     game_world.add_object(grass_background, 0)
+    game_world.add_object(boy, 1)
+    game_world.add_object(grass_foreground, 1)
+
 
 # 종료
 def exit():
