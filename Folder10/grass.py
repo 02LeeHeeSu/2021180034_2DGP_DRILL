@@ -9,6 +9,9 @@ class Grass:
         pass
 
     def draw(self):
-        self.image.draw(400, 30)
+        if self.depth == 0:
+            self.image.draw(400, 50)
+        elif self.depth == 1:
+            self.image.draw(400, 30)
 
 
