@@ -7,7 +7,7 @@ from boy import Boy
 
 
 boy = None
-grass = None
+grass_background = None
 
 
 def handle_events():
@@ -23,11 +23,11 @@ def handle_events():
 
 # 초기화
 def enter():
-    global boy, grass
+    global boy, grass_background
     boy = Boy()
-    grass = Grass()
+    grass_background = Grass()
     game_world.add_object(boy, 1)
-    game_world.add_object(grass, 0)
+    game_world.add_object(grass_background, 0)
 
 # 종료
 def exit():
