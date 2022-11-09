@@ -1,13 +1,17 @@
 from pico2d import *
 import game_framework
 import game_world
+import random
 
 from grass import Grass
 from boy import Boy
+from bird import Bird
 
 
 boy = None
 grass = None
+bird = None
+
 
 def handle_events():
     events = get_events()
@@ -22,11 +26,13 @@ def handle_events():
 
 # 초기화
 def enter():
-    global boy, grass
+    global boy, grass, bird
     boy = Boy()
     grass = Grass()
+    bird = Bird(random.randint(100, 1500))
     game_world.add_object(grass, 0)
     game_world.add_object(boy, 1)
+    game_world.add_object(bird, 1)
 
 
 # 종료
