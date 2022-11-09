@@ -29,10 +29,11 @@ def enter():
     global boy, grass, bird
     boy = Boy()
     grass = Grass()
-    bird = Bird(random.randint(100, 1500))
+    bird = [Bird(random.randint(100, 1500)) for i in range(10)]
     game_world.add_object(grass, 0)
     game_world.add_object(boy, 1)
-    game_world.add_object(bird, 1)
+    for i in range(10):
+        game_world.add_object(bird[i], 1)
 
 
 # 종료
