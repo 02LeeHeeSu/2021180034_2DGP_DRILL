@@ -140,10 +140,15 @@ class Boy:
             self.cur_state = next_state_table[self.cur_state][event]
             self.cur_state.enter(self, event)
 
-
+    def get_bb(self):
+        return self.x - server.background.window_left - 50, \
+               self.y - server.background.window_bottom - 50, \
+               self.x - server.background.window_left + 50, \
+               self.y - server.background.window_bottom + 50
 
     def draw(self):
         self.cur_state.draw(self)
+        draw_rectangle(*self.get_bb())
 
 
     def handle_event(self, event):
