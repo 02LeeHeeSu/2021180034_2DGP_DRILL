@@ -25,6 +25,8 @@ def enter():
     for i in range(100):
         game_world.add_object(server.ball[i], 1)
 
+    game_world.add_collision_pairs(server.boy, server.ball, 'boy:ball')
+
 
 
 def exit():
