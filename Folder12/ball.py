@@ -15,14 +15,19 @@ class Ball:
         self.y = random.randint(10, server.background.h - 1 - 10)
 
     def draw(self):
-        self.image.draw(self.x, self.y)
+        sx, sy = self.x - server.background.window_left, self.y - server.background.window_bottom
+
+        self.image.draw(sx, sy)
         draw_rectangle(*self.get_bb())
 
     def update(self):
         pass
 
     def get_bb(self):
-        return self.x - 10, self.y - 10, self.x + 10, self.y + 10
+        return self.x - server.background.window_left - 10, \
+               self.y - server.background.window_bottom - 10, \
+               self.x - server.background.window_left + 10, \
+               self.y - server.background.window_bottom + 10
 
     def handle_collision(self, other, group):
         if group == 'boy:ball':
