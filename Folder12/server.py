@@ -1,3 +1,3 @@
 boy = None
-zombie = None
+ball = None
 background = None

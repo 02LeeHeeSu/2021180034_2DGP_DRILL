@@ -21,6 +21,10 @@ def enter():
     server.background = Background()
     game_world.add_object(server.background, 0)
 
+    server.ball = [Ball() for i in range(100)]
+    for i in range(100):
+        game_world.add_object(server.ball[i], 1)
+
 
 
 def exit():
