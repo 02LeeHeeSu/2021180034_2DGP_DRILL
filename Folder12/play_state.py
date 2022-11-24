@@ -8,7 +8,8 @@ import game_world
 
 from boy import Boy
 # fill here
-from background import TileBackground as Background
+from background import FixedBackground as Background
+from ball import Ball
 
 import server
 
