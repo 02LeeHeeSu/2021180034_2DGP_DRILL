@@ -117,6 +117,7 @@ class Boy:
         self.cur_state = WalkingState
         self.cur_state.enter(self, None)
         self.x, self.y = get_canvas_width() // 2, get_canvas_height() // 2
+        self.ball_num = 0
 
 
     def get_bb(self):
@@ -149,4 +150,8 @@ class Boy:
         if (event.type, event.key) in key_event_table:
             key_event = key_event_table[(event.type, event.key)]
             self.add_event(key_event)
+
+    def handle_collision(self, other, group):
+        if group == 'boy:ball':
+            self.ball_num += 1
 
